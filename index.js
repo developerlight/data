@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors({ origin: '*' }));
 
 mongoose.connect('mongodb+srv://samsulmuhyidin:<password>@cluster0.jof99vn.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
